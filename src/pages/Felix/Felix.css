@@ -1,0 +1,127 @@
+.recom{
+    display:grid;
+    flex-basis:30%;
+    gap: 14px;
+}
+
+.recom.dark-theme {
+    background-color: var(--bg-color);
+}
+
+.side-video-list{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:8px;
+    text-decoration: none;
+    transition: background-color 0.2s;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+.side-video-list:hover {
+    background-color: var(--hover-color);
+}
+
+.dark-theme .side-video-list:hover {
+    background-color: var(--active-hover-color);
+}
+
+.side-video-list img{
+    flex-basis:49%;
+    width: 50%;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.vid-info{
+    flex-basis:49%;
+}
+
+.vid-info h4{
+    font-size:14px;
+    margin-left:5px;
+    margin-bottom:5px;
+    line-height: 1.3;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.dark-theme .vid-info h4 {
+    color: #fff;
+}
+
+.vid-info p{
+    margin-left:5px;
+    margin-top:4px;
+    font-size:12px;
+    font-weight:500;
+    color: var(--secondary-text-color);
+}
+
+.vid-info .views {
+    margin-top: 2px;
+}
+
+/* Filter for icons in dark mode - similar to what's shown in the image */
+.dark-theme img:not(.user-icon, .logo) {
+    filter: brightness(0.9);
+}
+
+/* Category Pills styling like in the image */
+.category {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    padding: 10px 0;
+    scrollbar-width: none; /* Firefox */
+}
+
+.category::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+}
+
+.category-pill {
+    padding: 6px 12px;
+    background: var(--hover-color);
+    border-radius: 18px;
+    white-space: nowrap;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: var(--text-color);
+}
+
+.category-pill:hover,
+.category-pill.active {
+    background: var(--active-hover-color);
+}
+
+.dark-theme .category-pill {
+    background: #303030;
+    color: #fff;
+}
+
+.dark-theme .category-pill:hover,
+.dark-theme .category-pill.active {
+    background: #404040;
+}
+
+@media(max-width:900px){
+    .recom{
+        flex-basis:100%;
+    }
+    
+    .side-video-list {
+        margin-bottom: 12px;
+    }
+}
+
+@media(max-width:600px){
+    .vid-info h4 {
+        font-size: 12px;
+    }
+    
+    .vid-info p {
+        font-size: 11px;
+    }
+}

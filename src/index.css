@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+  /* Light Theme */
+  --bg-color: #f9f9f9;
+  --text-color: #0f0f0f;
+  --secondary-text-color: #606060;
+  --link-color: #5a5a5a;
+  --link-hover-color: #0f0f0f;
+  --transition-speed: 0.3s;
+  --border-color: #ccc;
+  --hover-color: #f2f2f2;
+  --active-hover-color: #e6e6e6;
+  --navbar-bg: #fff;
+  --sidebar-bg: #fff;
+  --search-bg: transparent;
+  --box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  --card-bg: #fff;
+  --input-bg: #fff;
+  --input-text: #0f0f0f;
+  --input-placeholder: #606060;
+  --icon-filter: none;
+}
+
+.dark-theme {
+  /* Dark Theme */
+  --bg-color: #0f0f0f;
+  --text-color: #fff;
+  --secondary-text-color: #aaaaaa;
+  --link-color: #aaaaaa;
+  --link-hover-color: #fff;
+  --border-color: #333;
+  --hover-color: #272727;
+  --active-hover-color: #383838;
+  --navbar-bg: #0f0f0f;
+  --sidebar-bg: #0f0f0f;
+  --search-bg: #121212;
+  --box-shadow: 0 0 10px rgba(0,0,0,0.4);
+  --card-bg: #1f1f1f;
+  --input-bg: #121212;
+  --input-text: #fff;
+  --input-placeholder: #aaaaaa;
+  --icon-filter: invert(1);
+}
+
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:sans-serif;
+}
+
+a{
+  text-decoration:none;
+  color: var(--link-color);
+  transition: color var(--transition-speed) ease;
+}
+
+a:hover {
+  color: var(--link-hover-color);
+}
+
+img{
+  cursor:pointer;
+}
+
+.flex-div{
+  display:flex;
+  align-items:center;
+}
+
+/* Apply transition to all elements for smooth theme switching */
+* {
+  transition: background-color var(--transition-speed) ease, 
+              color var(--transition-speed) ease,
+              border-color var(--transition-speed) ease,
+              box-shadow var(--transition-speed) ease;
+}
+
+/* Input styling for dark mode */
+input, textarea, select {
+  color: var(--input-text);
+  background-color: var(--input-bg);
+}
+
+input::placeholder, textarea::placeholder {
+  color: var(--input-placeholder);
+}
+
+/* Special handling for specific elements */
+.dark-theme img:not(.user-icon, .logo) {
+  filter: var(--icon-filter);
+}
+
+/* Override for video thumbnails and user images */
+.dark-theme .card img,
+.dark-theme .publisher img,
+.dark-theme .comment img,
+.dark-theme .search-thumbnail img {
+  filter: none !important;
+  border: none;
+  isolation: isolate;
+}
+
+/* Ensure video elements are not affected by dark mode filters */
+.dark-theme video,
+.dark-theme iframe,
+.dark-theme .video-iframe,
+.dark-theme .video-wrapper,
+.dark-theme .video-wrapper *,
+.dark-theme img[src*="thumbnail"], /* Target thumbnail images */
+.dark-theme .card img /* Target video card thumbnails */ {
+  filter: none !important;
+  /* Use a light background for video containers to ensure they don't blend into dark backgrounds */
+  background-color: #000; 
+  isolation: isolate;
+}
+
+/* Additional css for embedded content */
+iframe, 
+.video-iframe,
+.video-wrapper,
+.card img /* Include thumbnails in isolation */ {
+  isolation: isolate;
+  z-index: 1;
+}
+
+/* Fix for inverted thumbnails in dark mode */
+.dark-theme img {
+  transition: filter 0s; /* Disable transition for filters on images */
+}
+
+/* 
+body{
+  background: #202020;
+  font-family:'Poppins';
+  color: white;
+} */

@@ -1,0 +1,41 @@
+.container{
+    background: var(--bg-color);
+    padding-left:17%;
+    padding-right:2%;
+    padding-top:20px;
+    padding-bottom:20px;
+    min-height: calc(100vh - 56px);
+    margin-top: 56px;
+    transition: all 0.3s ease;
+}
+.large-container{
+    padding-left:7%;
+}
+
+/* Tablet Styles */
+@media (max-width: 1200px) {
+    .container {
+        padding-left: 22%;
+    }
+    
+    .large-container {
+        padding-left: 9%;
+    }
+}
+
+/* Mobile Styles */
+@media (max-width: 900px) {
+    .large-container, .container {
+        padding-left: 5%;
+        padding-right: 5%;
+        width: 100%;
+    }
+}
+
+/* Small Mobile Styles */
+@media (max-width: 480px) {
+    .large-container, .container {
+        padding-left: 3%;
+        padding-right: 3%;
+    }
+}
